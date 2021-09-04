@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Form, Label } from "./ContactForm.styled";
 
 class ContactForm extends Component {
   state = { name: "", number: "" };
@@ -22,8 +23,8 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <Form onSubmit={this.handleSubmit}>
+        <Label>
           Name
           <input
             value={this.state.name}
@@ -35,9 +36,9 @@ class ContactForm extends Component {
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             required
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Number
           <input
             value={this.state.number}
@@ -49,10 +50,10 @@ class ContactForm extends Component {
             title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
             required
           />
-        </label>
+        </Label>
 
         <button type="submit">Add contact</button>
-      </form>
+      </Form>
     );
   }
 }
