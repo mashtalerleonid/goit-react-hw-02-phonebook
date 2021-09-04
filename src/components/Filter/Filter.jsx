@@ -1,14 +1,17 @@
-function Filter() {
+import PropTypes from "prop-types";
+
+function Filter({ filterChange, filter }) {
   return (
-    <div>
-      <p>hallo</p>
-    </div>
+    <label>
+      Find
+      <input value={filter} onChange={filterChange} />
+    </label>
   );
 }
 
-// FeedbackOptions.propTypes = {
-//   onLeaveFeedback: PropTypes.func,
-//   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-// };
+Filter.propTypes = {
+  filterChange: PropTypes.func,
+  filter: PropTypes.string.isRequired,
+};
 
 export default Filter;
